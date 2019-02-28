@@ -35,13 +35,13 @@ public class ModelViewControllerApplicationTests {
 	@Test
 	public void checkIfGreetingsControllerIsNotNull () {
 
-		assertThat(this.restTemplate.getForObject("http://localhost:8090/greeting",String.class)).isNotNull();
+		assertThat(this.restTemplate.getForObject("http://localhost:"+port+"/greeting",String.class)).isNotNull();
 	}
 
 	@Test
 	public void greetingsControllerShouldReturn() {
 
-		assertThat(this.restTemplate.getForObject("http://localhost:8090/greeting",String.class).contains("Another attr123456789Bye!"));
+		assertThat(this.restTemplate.getForObject("http://localhost:"+port+"/greeting",String.class).contains("Another attr123456789Bye!"));
 	}
 
 
