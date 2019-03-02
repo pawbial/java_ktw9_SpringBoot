@@ -14,32 +14,37 @@ public class BikeRepository {
 
     private Map<Integer, Bike> bikesRepository;
 
-    public BikeRepository () {
+    public BikeRepository() {
 
         Bike bike1 = new Bike();
         bike1.setBikeType(BikeType.BMX);
         bike1.setGears(11);
         bike1.setName("AAA");
+        bike1.setId(1);
 
         Bike bike2 = new Bike();
         bike2.setBikeType(BikeType.CROSS);
         bike2.setGears(10);
         bike2.setName("BBB");
+        bike2.setId(2);
 
         Bike bike3 = new Bike();
         bike3.setBikeType(BikeType.CITY);
         bike3.setGears(9);
         bike3.setName("CCC");
+        bike3.setId(3);
 
         Bike bike4 = new Bike();
         bike4.setBikeType(BikeType.MTB);
         bike4.setGears(13);
         bike4.setName("DDD");
+        bike4.setId(4);
 
         Bike bike5 = new Bike();
         bike5.setBikeType(BikeType.ROAD);
         bike5.setGears(7);
         bike5.setName("EEE");
+        bike5.setId(5);
 
         bikesRepository = new HashMap<>();
 
@@ -51,19 +56,23 @@ public class BikeRepository {
 
     }
 
-    public Collection <Bike> getBikes () {
+    public Collection<Bike> getBikes()
+    {
         return bikesRepository.values();
     }
 
-    public Optional<Bike> getBikeByIndex (int index) {
+    public Optional<Bike> getBikeByIndex(int index) {
+
         return Optional.of(bikesRepository.get(index));
     }
 
-    public void addBike (Bike bike) {
-        bikesRepository.put(bikesRepository.size()+1,bike);
+    public void addBike(Bike bike) {
+
+        bikesRepository.put(bikesRepository.size() + 1, bike);
     }
 
-    public Bike deleteBike (int index) {
+    public Bike deleteBike(int index) {
+
         return bikesRepository.remove(index);
     }
 }
